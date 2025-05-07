@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: src_test
+    database: airbnb       # <-- Add your database name here
+    schema: raw
+    tables:
+      - name: stg_test
