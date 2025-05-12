@@ -1,0 +1,25 @@
+
+version: 2
+
+models:
+  - name: stg_host
+    description: "A starter dbt staging host"
+    columns:
+      - name: host_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: "owner name of the resort"
+        data_tests:
+          - not_null
+      - name: is_superhost
+        description: "super host true or false"
+        data_tests:
+          - accepted_values:
+              values: ['False', 'True']
+      - name: created_at
+        description: "created date"
+        data_tests:
+          - not_null
