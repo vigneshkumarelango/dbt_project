@@ -42,13 +42,21 @@ models:
     +post-hook: 
       - "{{ log_end_time() }}"
 
-models:
-  demo_project:
-    tests:
-      +store_failures: true
-      +schema: dev_test
+#models:
+ # demo_project:
+  #  tests:
+   #   +store_failures: true
+    #  +schema: raw
 
 snapshots:
   demo_project:
     target_schema: snapshots
     strategy: check
+
+name: 'my_dbt_project'
+version: '1.0'
+profile: 'demo_project'
+
+models:
+  stg_listings:
+    +schema: dev  # default schema for local/dev
